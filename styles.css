@@ -1,0 +1,358 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #0a0a0a;
+  --white: #f5f5f5;
+  --off-white: #e8e8e8;
+  --gray: #888;
+  --light-gray: #ddd;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background-color: var(--black);
+  color: var(--white);
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 80px 20px 60px;
+  border-bottom: 1px solid var(--gray);
+}
+
+header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+}
+
+header .tagline {
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 24px 20px;
+  border-bottom: 1px solid var(--gray);
+  position: sticky;
+  top: 0;
+  background-color: var(--black);
+  z-index: 100;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--gray);
+}
+
+/* Main Content */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Sections */
+.section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--gray);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 0.1em;
+}
+
+.section-intro {
+  text-align: center;
+  font-style: italic;
+  color: var(--gray);
+  margin-bottom: 48px;
+  font-size: 1.2rem;
+}
+
+/* Round Indicator */
+.round-indicator {
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 32px;
+}
+
+/* Content Box */
+.content-box {
+  background-color: transparent;
+  border: 1px solid var(--gray);
+  padding: 48px;
+}
+
+.content-box h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.content-box p {
+  margin-bottom: 24px;
+}
+
+.content-box .note {
+  font-size: 0.95rem;
+  color: var(--gray);
+  font-style: italic;
+}
+
+.content-box .transition {
+  text-align: center;
+  font-style: italic;
+  color: var(--gray);
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
+/* Grid Visual */
+.grid-visual {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  max-width: 200px;
+  margin: 32px auto;
+}
+
+.grid-visual.small {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 140px;
+}
+
+.grid-visual.single {
+  grid-template-columns: 1fr;
+  max-width: 80px;
+}
+
+.stack {
+  aspect-ratio: 2.5/3.5;
+  border: 2px solid var(--white);
+  background-color: transparent;
+}
+
+.stack.large {
+  border-width: 3px;
+}
+
+/* Rule Highlight */
+.rule-highlight {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 32px;
+  margin: 32px 0;
+}
+
+.rule-highlight h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.rule-highlight p {
+  margin-bottom: 12px;
+  color: var(--black);
+}
+
+.rule-highlight p:last-child {
+  margin-bottom: 0;
+}
+
+.rule-highlight .special {
+  font-weight: 600;
+}
+
+.rule-highlight .note {
+  color: #555;
+}
+
+.rule-highlight ul {
+  margin: 16px 0 16px 24px;
+}
+
+.rule-highlight li {
+  margin-bottom: 8px;
+}
+
+/* Deals Grid */
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 700px) {
+  .deals-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Deal Card */
+.deal-card {
+  border: 1px solid var(--white);
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.deal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--gray);
+}
+
+.deal-header h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.deal-image {
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--gray);
+  background-color: var(--white);
+}
+
+.deal-image .placeholder-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  color: var(--black);
+  letter-spacing: 0.1em;
+}
+
+.deal-description {
+  padding: 24px;
+  flex-grow: 1;
+}
+
+.deal-description p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Conversion Table */
+.conversion-table {
+  text-align: center;
+}
+
+.conversion-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+
+.sips, .shots {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.equals {
+  color: var(--gray);
+}
+
+.conversion-note {
+  font-size: 0.95rem;
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+
+.conversion-example {
+  font-style: italic;
+  color: var(--gray);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 48px 20px;
+  border-top: 1px solid var(--gray);
+}
+
+footer p {
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header .tagline {
+    font-size: 1.1rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 16px 24px;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .content-box {
+    padding: 32px 24px;
+  }
+
+  .rule-highlight {
+    padding: 24px;
+  }
+}

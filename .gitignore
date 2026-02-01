@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+# Optional: if you use a specific lock file
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
+# pnpm-error.log
+
+# Build artifacts
+dist/
+build/
+# You should ignore the compiled JavaScript files (e.g., .js and .js.map)
+# generated from your TypeScript source files, but only if they are output
+# to a dedicated directory like `dist` or `build`.
+
+# IDE and editor files
+.vscode/   # VS Code settings, if personal (shared settings can be committed)
+.idea/     # IntelliJ specific files
+*.suo
+*.user
+*.casc
+*.cache
+*.project
+.DS_Store  # macOS specific file
+Thumbs.db  # Windows specific file
+
+# Environment variables
+.env
+.env.local
+
+# Testing and coverage
+coverage/

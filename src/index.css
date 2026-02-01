@@ -1,0 +1,668 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #0a0a0a;
+    --white: #f5f5f5;
+    --off-white: #e8e8e8;
+    --gray: #888;
+    --light-gray: #ddd;
+    --gold: #c9a227;
+    --gold-light: #d4b44a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 80px 20px 60px;
+    border-bottom: 1px solid var(--gray);
+}
+
+header h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+}
+
+header .tagline {
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--gray);
+    letter-spacing: 0.1em;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 24px 20px;
+    border-bottom: 1px solid var(--gray);
+    position: sticky;
+    top: 0;
+    background-color: var(--black);
+    z-index: 100;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--gray);
+}
+
+/* Main Content */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Sections */
+.section {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--gray);
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 0.1em;
+}
+
+.section-intro {
+    text-align: center;
+    font-style: italic;
+    color: var(--gray);
+    margin-bottom: 48px;
+    font-size: 1.2rem;
+}
+
+/* Round Indicator */
+.round-indicator {
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 32px;
+}
+
+/* Invitation Card */
+.invitation-card {
+    position: relative;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 64px 56px;
+    text-align: center;
+    border: 1px solid var(--white);
+}
+
+.invitation-card::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    border: 1px solid var(--white);
+    pointer-events: none;
+}
+
+.invitation-card h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    font-style: italic;
+    color: var(--white);
+}
+
+.invitation-card .round-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 32px;
+}
+
+.invitation-card p {
+    margin-bottom: 24px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--white);
+}
+
+.invitation-card .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 32px 0;
+    color: var(--gray);
+}
+
+.invitation-card .divider::before,
+.invitation-card .divider::after {
+    content: "";
+    width: 60px;
+    height: 1px;
+    background-color: var(--gray);
+}
+
+.invitation-card .divider-symbol {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.2rem;
+}
+
+/* Rule Section within Invitation */
+.invitation-card .rule-section {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--gray);
+}
+
+.invitation-card .rule-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 16px;
+    color: var(--gold);
+}
+
+.invitation-card .rule-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--off-white);
+}
+
+.invitation-card .rule-text.special {
+    font-weight: 600;
+    margin-top: 16px;
+    color: var(--white);
+}
+
+.invitation-card .rule-list {
+    list-style: none;
+    margin: 16px 0;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.invitation-card .rule-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--off-white);
+}
+
+.invitation-card .rule-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--gray);
+}
+
+.invitation-card .note {
+    font-size: 0.9rem;
+    color: var(--gray);
+    font-style: italic;
+}
+
+.invitation-card .transition {
+    font-style: italic;
+    color: var(--gray);
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* Content Box (for non-invitation sections) */
+.content-box {
+    background-color: transparent;
+    border: 1px solid var(--gray);
+    padding: 48px;
+}
+
+.content-box h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+    font-style: italic;
+}
+
+.content-box p {
+    margin-bottom: 24px;
+}
+
+.content-box .note {
+    font-size: 0.95rem;
+    color: var(--gray);
+    font-style: italic;
+}
+
+.content-box .transition {
+    text-align: center;
+    font-style: italic;
+    color: var(--gray);
+    margin-top: 32px;
+    margin-bottom: 0;
+}
+
+/* Grid Visual */
+.grid-visual {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 200px;
+    margin: 32px auto;
+}
+
+.grid-visual.small {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 140px;
+}
+
+.grid-visual.single {
+    grid-template-columns: 1fr;
+    max-width: 80px;
+}
+
+.stack {
+    aspect-ratio: 2.5/3.5;
+    border: 2px solid var(--white);
+    background-color: transparent;
+}
+
+.stack.large {
+    border-width: 3px;
+}
+
+/* Deals Grid */
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+@media (max-width: 700px) {
+    .deals-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Deal Card */
+.deal-card {
+    border: 1px solid var(--white);
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.deal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.deal-header h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+}
+
+.deal-image {
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--gray);
+    background-color: var(--white);
+}
+
+.deal-image .placeholder-text {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 2rem;
+    color: var(--black);
+    letter-spacing: 0.1em;
+}
+
+.deal-description {
+    padding: 24px;
+    flex-grow: 1;
+}
+
+.deal-description p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Conversion Table */
+.conversion-table {
+    text-align: center;
+}
+
+.conversion-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+}
+
+.sips,
+.shots {
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+.equals {
+    color: var(--gray);
+}
+
+.conversion-note {
+    font-size: 0.95rem;
+    color: var(--gray);
+    margin-bottom: 16px;
+}
+
+.conversion-example {
+    font-style: italic;
+    color: var(--gray);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 48px 20px;
+    border-top: 1px solid var(--gray);
+}
+
+footer p {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+}
+
+/* Players Section */
+.add-player-form {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.player-input {
+    flex: 1;
+    padding: 12px 16px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid var(--gray);
+    color: var(--white);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.player-input:focus {
+    border-color: var(--white);
+}
+
+.player-input::placeholder {
+    color: var(--gray);
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--white);
+}
+
+.btn-primary {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.btn-primary:hover {
+    background-color: var(--gray);
+}
+
+.btn-assign {
+    background-color: transparent;
+    color: var(--white);
+    width: 100%;
+    margin-top: 16px;
+}
+
+.btn-assign:hover:not(:disabled) {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.btn-assign:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-remove {
+    background: transparent;
+    border: none;
+    color: var(--gray);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.btn-remove:hover {
+    color: var(--white);
+}
+
+.btn-clear {
+    background-color: transparent;
+    color: var(--gray);
+    border-color: var(--gray);
+    margin-top: 32px;
+    width: 100%;
+}
+
+.btn-clear:hover {
+    color: var(--white);
+    border-color: var(--white);
+}
+
+/* Deal Selector */
+.deal-selector {
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.deal-selector label {
+    color: var(--gray);
+    font-style: italic;
+}
+
+.deal-select {
+    flex: 1;
+    padding: 12px 16px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1rem;
+    background-color: var(--black);
+    border: 1px solid var(--gray);
+    color: var(--white);
+    outline: none;
+    cursor: pointer;
+}
+
+.deal-select:focus {
+    border-color: var(--white);
+}
+
+/* Players List */
+.players-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.player-card {
+    border: 1px solid var(--gray);
+    padding: 24px;
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.player-header h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.player-deals {
+    min-height: 60px;
+}
+
+.no-deals {
+    color: var(--gray);
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.deals-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.deal-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background-color: var(--white);
+    color: var(--black);
+    font-size: 0.85rem;
+}
+
+.deal-remove {
+    background: none;
+    border: none;
+    color: var(--gray);
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.deal-remove:hover {
+    color: var(--black);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header .tagline {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 16px 24px;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .content-box {
+        padding: 32px 24px;
+    }
+
+    .invitation-card {
+        padding: 48px 32px;
+    }
+
+    .invitation-card::before {
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .invitation-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .add-player-form {
+        flex-direction: column;
+    }
+
+    .deal-selector {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .players-list {
+        grid-template-columns: 1fr;
+    }
+}

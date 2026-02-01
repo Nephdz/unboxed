@@ -30,6 +30,15 @@ function RoundTwo() {
             it drinks their stack and assigns the other two stacks to players of
             their choosing.
           </p>
+          <p className="rule-text special">
+            Foursome: If a fourth matching card appears, the player who placed
+            it drinks their stack and everyone else drinks the remaining three
+            stacks.
+          </p>
+          <p className="rule-text special">
+            If the matches are royalty, everybody must drink the total stack
+            count of those matches.
+          </p>
         </div>
 
         <p className="transition">

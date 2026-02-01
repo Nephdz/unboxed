@@ -2,7 +2,8 @@ export interface Deal {
   id: string;
   name: string;
   description: string;
-  imagePlaceholder: string;
+  abbreviation: string;
+  image: string;
 }
 
 export interface Player {

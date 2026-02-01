@@ -18,10 +18,11 @@ function RoundThree() {
         <div className="rule-section">
           <h4 className="rule-title">Deals Unlocked</h4>
           <p className="rule-text">
-            In this final round, players who guess incorrectly receive a Deal—a
-            special ability that can be used in future turns.
+            In this final round, players are able to use Deals.
           </p>
-          <p className="note">Deals are only awarded when you're wrong.</p>
+          <p className="note">
+            Deals are only available after missing a guess.
+          </p>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { Deal } from '../types';
+import { Deal } from "../types";
 
 interface DealCardProps {
   deal: Deal;
@@ -7,14 +7,18 @@ interface DealCardProps {
 function DealCard({ deal }: DealCardProps) {
   return (
     <div className="deal-card">
-      <div className="deal-header">
+      <div className="deal-corner deal-corner-top">
+        <span className="deal-corner-symbol">{deal.abbreviation}</span>
+        <span className="deal-corner-icon">♦</span>
+      </div>
+      <div className="deal-center">
+        <img src={deal.image} alt={deal.name} className="deal-image" />
         <h3>{deal.name}</h3>
-      </div>
-      <div className="deal-image">
-        <span className="placeholder-text">{deal.imagePlaceholder}</span>
-      </div>
-      <div className="deal-description">
         <p>{deal.description}</p>
+      </div>
+      <div className="deal-corner deal-corner-bottom">
+        <span className="deal-corner-symbol">{deal.abbreviation}</span>
+        <span className="deal-corner-icon">♦</span>
       </div>
     </div>
   );

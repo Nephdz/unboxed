@@ -12,7 +12,11 @@ function DealCard({ deal }: DealCardProps) {
         <span className="deal-corner-icon">♦</span>
       </div>
       <div className="deal-center">
-        <img src={deal.image} alt={deal.name} className="deal-image" />
+        <img
+          src={import.meta.env.BASE_URL + deal.image}
+          alt={deal.name}
+          className="deal-image"
+        />
         <h3>{deal.name}</h3>
         <p>{deal.description}</p>
       </div>

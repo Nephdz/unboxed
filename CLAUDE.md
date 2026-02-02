@@ -27,8 +27,11 @@ This is a React + TypeScript single-page application for a drinking card game ca
 ### State Management
 
 - React hooks (`useState`, `useEffect`) for component state
-- Player data persisted to localStorage under key `'unboxed-players'`
-- App.tsx is the main component that manages player state and passes props down
+- App.tsx is the main component that manages state and passes props down
+- localStorage keys:
+  - `'unboxed-players'` - Player data
+  - `'unboxed-deck-config'` - Number of each deal card in the deck (default 2 each)
+  - `'unboxed-deals-per-player'` - How many deals each player receives (default 2)
 
 ### Core Data Types
 
@@ -50,4 +53,6 @@ interface Deal {
 
 ### Deployment
 
-Configured for subpath deployment at `/unboxed/` (see `vite.config.ts` base path).
+- Configured for subpath deployment at `/unboxed/` (see `vite.config.ts` base path)
+- GitHub Pages deployment via `.github/workflows/deploy.yaml`
+- Use `import.meta.env.BASE_URL` when referencing static assets from `public/`

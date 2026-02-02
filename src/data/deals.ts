@@ -26,11 +26,11 @@ export const deals: Deal[] = [
     image: "images/deals/student-loans.png",
   },
   {
-    id: "tbd",
-    name: "TBD",
+    id: "split-post",
+    name: "Split Post",
     description:
-      "When you hit a post (exact match), split into two different decks and play higher/lower on both simultaneously.",
-    abbreviation: "TBD",
-    image: "images/deals/tbd.png",
+      "When you hit a post (exact match), you may instead play higher/lower on both simultaneously. Each loss is worth one stack.",
+    abbreviation: "SP",
+    image: "images/deals/split-post.png",
   },
 ];

@@ -11,7 +11,11 @@ function Conversions() {
           </div>
           <div className="conversion-note">Maximum 2 shots per conversion</div>
           <div className="conversion-example">
-            <em>Example: 80 sips = 1 shot + 30 sips</em>
+            <em>80 sips = 1 shot + 30 sips</em>
+            <br />
+            <em>120 sips = 2 shots + 20 sips</em>
+            <br />
+            <em>150 sips = 2 shots + 50 sips</em>
           </div>
         </div>
       </div>

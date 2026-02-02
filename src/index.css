@@ -479,6 +479,81 @@ footer p {
     margin-bottom: 32px;
 }
 
+/* Deck Configuration */
+.deck-config {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.deck-config h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.deck-config-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.deck-config-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border: 1px solid var(--gray);
+}
+
+.deck-config-name {
+    font-size: 0.95rem;
+}
+
+.deck-config-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn.btn-count {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    background-color: transparent;
+    border: 1px solid var(--gray);
+    color: var(--white);
+}
+
+.btn-count:hover {
+    border-color: var(--white);
+}
+
+.deck-config-count {
+    min-width: 24px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.btn-random {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.deals-per-player {
+    margin-top: 16px;
+    border-color: var(--white);
+}
+
 .player-input {
     flex: 1;
     padding: 12px 16px;

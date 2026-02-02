@@ -1,33 +1,43 @@
-import { useState } from 'react';
-import { Player, Deal } from '../types';
+import { useState } from "react";
+import { Player, Deal } from "../types";
 
 interface PlayersProps {
   players: Player[];
   deals: Deal[];
+  deckConfig: Record<string, number>;
+  dealsPerPlayer: number;
   onAddPlayer: (name: string) => void;
   onRemovePlayer: (playerId: string) => void;
   onAssignDeal: (playerId: string, dealId: string) => void;
   onRemoveDeal: (playerId: string, dealId: string) => void;
   onClearAll: () => void;
+  onUpdateDeckConfig: (dealId: string, count: number) => void;
+  onUpdateDealsPerPlayer: (count: number) => void;
+  onRandomAssign: () => void;
 }
 
 function Players({
   players,
   deals,
+  deckConfig,
+  dealsPerPlayer,
   onAddPlayer,
   onRemovePlayer,
   onAssignDeal,
   onRemoveDeal,
-  onClearAll
+  onClearAll,
+  onUpdateDeckConfig,
+  onUpdateDealsPerPlayer,
+  onRandomAssign,
 }: PlayersProps) {
-  const [newPlayerName, setNewPlayerName] = useState('');
-  const [selectedDeal, setSelectedDeal] = useState<string>('');
+  const [newPlayerName, setNewPlayerName] = useState("");
+  const [selectedDeal, setSelectedDeal] = useState<string>("");
 
   const handleAddPlayer = (e: React.FormEvent) => {
     e.preventDefault();
     if (newPlayerName.trim()) {
       onAddPlayer(newPlayerName.trim());
-      setNewPlayerName('');
+      setNewPlayerName("");
     }
   };
 
@@ -38,13 +48,15 @@ function Players({
   };
 
   const getDealName = (dealId: string) => {
-    return deals.find(d => d.id === dealId)?.name || dealId;
+    return deals.find((d) => d.id === dealId)?.name || dealId;
   };
 
   return (
     <section id="players" className="section">
       <h2>Players</h2>
-      <p className="section-intro">Track players and their deals throughout the game.</p>
+      <p className="section-intro">
+        Track players and their deals throughout the game.
+      </p>
 
       <div className="content-box">
         <form onSubmit={handleAddPlayer} className="add-player-form">
@@ -55,8 +67,73 @@ function Players({
             placeholder="Enter player name"
             className="player-input"
           />
-          <button type="submit" className="btn btn-primary">Add Player</button>
+          <button type="submit" className="btn btn-primary">
+            Add Player
+          </button>
         </form>
+
+        <div className="deck-config">
+          <h3>Deals Deck</h3>
+          <div className="deck-config-grid">
+            {deals.map((deal) => (
+              <div key={deal.id} className="deck-config-item">
+                <span className="deck-config-name">{deal.name}</span>
+                <div className="deck-config-controls">
+                  <button
+                    type="button"
+                    className="btn btn-count"
+                    onClick={() =>
+                      onUpdateDeckConfig(deal.id, deckConfig[deal.id] - 1)
+                    }
+                  >
+                    −
+                  </button>
+                  <span className="deck-config-count">
+                    {deckConfig[deal.id]}
+                  </span>
+                  <button
+                    type="button"
+                    className="btn btn-count"
+                    onClick={() =>
+                      onUpdateDeckConfig(deal.id, deckConfig[deal.id] + 1)
+                    }
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="deck-config-item deals-per-player">
+            <span className="deck-config-name">Deals per player</span>
+            <div className="deck-config-controls">
+              <button
+                type="button"
+                className="btn btn-count"
+                onClick={() => onUpdateDealsPerPlayer(dealsPerPlayer - 1)}
+              >
+                −
+              </button>
+              <span className="deck-config-count">{dealsPerPlayer}</span>
+              <button
+                type="button"
+                className="btn btn-count"
+                onClick={() => onUpdateDealsPerPlayer(dealsPerPlayer + 1)}
+              >
+                +
+              </button>
+            </div>
+          </div>
+          {players.length > 0 && (
+            <button
+              type="button"
+              className="btn btn-primary btn-random"
+              onClick={onRandomAssign}
+            >
+              Randomly Assign Deals
+            </button>
+          )}
+        </div>
 
         {players.length > 0 && (
           <>
@@ -68,14 +145,16 @@ function Players({
                 className="deal-select"
               >
                 <option value="">Choose a deal...</option>
-                {deals.map(deal => (
-                  <option key={deal.id} value={deal.id}>{deal.name}</option>
+                {deals.map((deal) => (
+                  <option key={deal.id} value={deal.id}>
+                    {deal.name}
+                  </option>
                 ))}
               </select>
             </div>
 
             <div className="players-list">
-              {players.map(player => (
+              {players.map((player) => (
                 <div key={player.id} className="player-card">
                   <div className="player-header">
                     <h3>{player.name}</h3>

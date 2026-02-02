@@ -9,7 +9,11 @@ function RoundOne() {
         <p>
           All nine stacks are in play. Players take turns selecting a stack and
           declaring <em>higher</em> or <em>lower</em>. A card is revealed from
-          the deck and placed on the chosen stack.
+          the deck and placed on the chosen stack. If the revealed card is the
+          same as the card in the stack, the guess is considered incorrect and
+          double the stack must be drunk. You may call <em>post</em> before the
+          card is revealed and if you are successful, everybody else must drink
+          double the stack.
         </p>
 
         <div className="divider">

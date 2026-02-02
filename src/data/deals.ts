@@ -29,7 +29,7 @@ export const deals: Deal[] = [
     id: "split-post",
     name: "Split Post",
     description:
-      "When you hit a post (exact match), you may instead play higher/lower on both simultaneously. Each loss is worth one stack.",
+      "When you hit a post, you may instead play higher/lower on both simultaneously. Each loss is worth one stack.",
     abbreviation: "SP",
     image: "images/deals/split-post.png",
   },

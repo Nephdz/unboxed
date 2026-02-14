@@ -33,4 +33,38 @@ export const deals: Deal[] = [
     abbreviation: "SP",
     image: "images/deals/split-post.png",
   },
+  {
+    id: "protection",
+    name: "Protection",
+    description: "Play this to negate a loss. <em>Always use protection.</em>",
+    abbreviation: "P",
+    image: "images/deals/protection.png",
+  },
+];
+
+const workshopDeals: Deal[] = [
+  {
+    id: "camaraderie",
+    name: "Camaraderie",
+    description:
+      "Pick another player and delay your drink until their turn. If they guess right, you don't drink. If they guess wrong, you drink double.",
+    abbreviation: "C",
+    image: "images/deals/camaraderie.png",
+  },
+  {
+    id: "easy-w",
+    name: "Easy W",
+    description:
+      "This may be played at anytime. Pick another player. If you guess correctly, they drink the stack. If you guess wrong, you drink double.",
+    abbreviation: "EW",
+    image: "images/deals/easy-w.png",
+  },
+  {
+    id: "placeholder",
+    name: "Placeholder",
+    description:
+      "Something that would benefit from playing when there's a middle card.",
+    abbreviation: "PH",
+    image: "images/deals/placeholder.png",
+  },
 ];

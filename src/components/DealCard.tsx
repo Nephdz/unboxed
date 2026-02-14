@@ -18,7 +18,7 @@ function DealCard({ deal }: DealCardProps) {
           className="deal-image"
         />
         <h3>{deal.name}</h3>
-        <p>{deal.description}</p>
+        <p dangerouslySetInnerHTML={{ __html: deal.description }} />
       </div>
       <div className="deal-corner deal-corner-bottom">
         <span className="deal-corner-symbol">{deal.abbreviation}</span>

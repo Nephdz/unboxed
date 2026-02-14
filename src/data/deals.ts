@@ -42,7 +42,7 @@ export const deals: Deal[] = [
   },
 ];
 
-const workshopDeals: Deal[] = [
+export const workshopDeals: Deal[] = [
   {
     id: "camaraderie",
     name: "Camaraderie",

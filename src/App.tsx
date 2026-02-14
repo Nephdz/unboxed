@@ -5,7 +5,7 @@ import { deals } from "./data/deals";
 type DeckConfig = Record<string, number>;
 
 const defaultDeckConfig: DeckConfig = deals.reduce((acc, deal) => {
-  acc[deal.id] = 2;
+  acc[deal.id] = deal.defaultCount;
   return acc;
 }, {} as DeckConfig);
 
@@ -28,7 +28,12 @@ function App() {
 
   const [deckConfig, setDeckConfig] = useState<DeckConfig>(() => {
     const saved = localStorage.getItem("unboxed-deck-config");
-    return saved ? JSON.parse(saved) : defaultDeckConfig;
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      // Merge with defaults to include any new deals
+      return { ...defaultDeckConfig, ...parsed };
+    }
+    return defaultDeckConfig;
   });
 
   const [dealsPerPlayer, setDealsPerPlayer] = useState<number>(() => {

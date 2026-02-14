@@ -4,6 +4,7 @@ export interface Deal {
   description: string;
   abbreviation: string;
   image: string;
+  defaultCount: number;
 }
 
 export interface Player {

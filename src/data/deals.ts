@@ -8,6 +8,7 @@ export const deals: Deal[] = [
       "Other players each pick a card and can only see their own. Everyone stands in self-proclaimed order from highest to lowest without knowing others' cards. Players must be honest — an Ace cannot claim the lowest position.",
     abbreviation: "BSB",
     image: "images/deals/backstreet-boys.png",
+    defaultCount: 2,
   },
   {
     id: "bottoms-up",
@@ -16,6 +17,7 @@ export const deals: Deal[] = [
       "Replace the top card of a stack with the bottom card. You pay a tax equal to the value of the new top card.",
     abbreviation: "BU",
     image: "images/deals/bottoms-up.png",
+    defaultCount: 2,
   },
   {
     id: "student-loans",
@@ -24,6 +26,7 @@ export const deals: Deal[] = [
       "Delay half of your drink amount until your next turn. If you guess wrong again, drink double the stack. You cannot use another deal while paying student loans.",
     abbreviation: "SL",
     image: "images/deals/student-loans.png",
+    defaultCount: 2,
   },
   {
     id: "split-post",
@@ -32,6 +35,7 @@ export const deals: Deal[] = [
       "When you hit a post, you may instead play higher/lower on both simultaneously. Each loss is worth one stack.",
     abbreviation: "SP",
     image: "images/deals/split-post.png",
+    defaultCount: 2,
   },
   {
     id: "protection",
@@ -39,6 +43,7 @@ export const deals: Deal[] = [
     description: "Play this to negate a loss. <em>Always use protection.</em>",
     abbreviation: "P",
     image: "images/deals/protection.png",
+    defaultCount: 1,
   },
 ];
 
@@ -50,6 +55,7 @@ export const workshopDeals: Deal[] = [
       "Pick another player and delay your drink until their turn. If they guess right, you don't drink. If they guess wrong, you drink double.",
     abbreviation: "C",
     image: "images/deals/camaraderie.png",
+    defaultCount: 2,
   },
   {
     id: "easy-w",
@@ -58,6 +64,7 @@ export const workshopDeals: Deal[] = [
       "This may be played at anytime. Pick another player. If you guess correctly, they drink the stack. If you guess wrong, you drink double.",
     abbreviation: "EW",
     image: "images/deals/easy-w.png",
+    defaultCount: 2,
   },
   {
     id: "placeholder",
@@ -66,5 +73,6 @@ export const workshopDeals: Deal[] = [
       "Something that would benefit from playing when there's a middle card.",
     abbreviation: "PH",
     image: "images/deals/placeholder.png",
+    defaultCount: 2,
   },
 ];

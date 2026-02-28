@@ -45,16 +45,13 @@ export const deals: Deal[] = [
     image: "images/deals/protection.png",
     defaultCount: 1,
   },
-];
-
-export const workshopDeals: Deal[] = [
   {
-    id: "camaraderie",
-    name: "Camaraderie",
+    id: "brothers-in-arms",
+    name: "Brothers In Arms",
     description:
-      "Pick another player and delay your drink until their turn. If they guess right, you don't drink. If they guess wrong, you drink double.",
-    abbreviation: "C",
-    image: "images/deals/camaraderie.png",
+      "This may be played immediately after a fail. Play normally until somebody fails. You drink the same as that person. Ends with a fail or makes it back to you.",
+    abbreviation: "BiA",
+    image: "images/deals/brothers-in-arms.png",
     defaultCount: 2,
   },
   {
@@ -67,12 +64,14 @@ export const workshopDeals: Deal[] = [
     defaultCount: 2,
   },
   {
-    id: "placeholder",
-    name: "Placeholder",
+    id: "fat-post",
+    name: "Fat Post",
     description:
-      "Something that would benefit from playing when there's a middle card.",
-    abbreviation: "PH",
-    image: "images/deals/placeholder.png",
+      "Play anytime before you play, create a +2/-2 range (can't go below 2 or above A). The range becomes the new post values. Everybody plays 1 round with new post",
+    abbreviation: "FP",
+    image: "images/deals/fat-post.png",
     defaultCount: 2,
   },
 ];
+
+// export const workshopDeals: Deal[] = [];

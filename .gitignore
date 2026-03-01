@@ -21,8 +21,10 @@ build/
 *.casc
 *.cache
 *.project
-**/.DS_Store  # macOS specific file
-Thumbs.db  # Windows specific file
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
 
 # Environment variables
 .env

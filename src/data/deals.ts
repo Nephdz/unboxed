@@ -75,7 +75,7 @@ export const deals: Deal[] = [
     name: "Fat Post",
     playType: "Before guess. Anytime.",
     description:
-      "Play anytime before you play, create a +2/-2 range (can't go below 2 or above A). The range becomes the new post values. Everybody plays 1 round with new post. Person who activates is immune to other player's posts for 1 round.",
+      "Create a +2/-2 range (can't go below 2 or above A). The range becomes the new post values. Everybody plays 1 round with new post. Person who activates is immune to other player's posts for 1 round.",
     abbreviation: "FP",
     image: "images/deals/fat-post.png",
     defaultCount: 2,

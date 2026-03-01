@@ -4,32 +4,27 @@ import { Player, Deal } from "../types";
 interface PlayersProps {
   players: Player[];
   deals: Deal[];
-  deckConfig: Record<string, number>;
   dealsPerPlayer: number;
   onAddPlayer: (name: string) => void;
   onRemovePlayer: (playerId: string) => void;
   onAssignDeal: (playerId: string, dealId: string) => void;
   onRemoveDeal: (playerId: string, dealId: string) => void;
   onClearAll: () => void;
-  onUpdateDeckConfig: (dealId: string, count: number) => void;
-  onUpdateDealsPerPlayer: (count: number) => void;
   onRandomAssign: () => void;
 }
 
 function Players({
   players,
   deals,
-  deckConfig,
   dealsPerPlayer,
   onAddPlayer,
   onRemovePlayer,
   onAssignDeal,
   onRemoveDeal,
   onClearAll,
-  onUpdateDeckConfig,
-  onUpdateDealsPerPlayer,
   onRandomAssign,
 }: PlayersProps) {
+  const totalCards = deals.reduce((sum, d) => sum + d.defaultCount, 0);
   const [newPlayerName, setNewPlayerName] = useState("");
   const [selectedDeal, setSelectedDeal] = useState<string>("");
 
@@ -56,6 +51,9 @@ function Players({
       <h2>Players</h2>
       <p className="section-intro">
         Track players and their deals throughout the game.
+        <br />
+        Number of deals each player gets is determined by # of cards in the
+        deck ({totalCards}) divided by # of players then rounded down.
       </p>
 
       <div className="content-box">
@@ -78,51 +76,15 @@ function Players({
             {deals.map((deal) => (
               <div key={deal.id} className="deck-config-item">
                 <span className="deck-config-name">{deal.name}</span>
-                <div className="deck-config-controls">
-                  <button
-                    type="button"
-                    className="btn btn-count"
-                    onClick={() =>
-                      onUpdateDeckConfig(deal.id, deckConfig[deal.id] - 1)
-                    }
-                  >
-                    −
-                  </button>
-                  <span className="deck-config-count">
-                    {deckConfig[deal.id]}
-                  </span>
-                  <button
-                    type="button"
-                    className="btn btn-count"
-                    onClick={() =>
-                      onUpdateDeckConfig(deal.id, deckConfig[deal.id] + 1)
-                    }
-                  >
-                    +
-                  </button>
-                </div>
+                <span className="deck-config-count">{deal.defaultCount}</span>
               </div>
             ))}
           </div>
           <div className="deck-config-item deals-per-player">
             <span className="deck-config-name">Deals per player</span>
-            <div className="deck-config-controls">
-              <button
-                type="button"
-                className="btn btn-count"
-                onClick={() => onUpdateDealsPerPlayer(dealsPerPlayer - 1)}
-              >
-                −
-              </button>
-              <span className="deck-config-count">{dealsPerPlayer}</span>
-              <button
-                type="button"
-                className="btn btn-count"
-                onClick={() => onUpdateDealsPerPlayer(dealsPerPlayer + 1)}
-              >
-                +
-              </button>
-            </div>
+            <span className="deck-config-count">
+              {players.length > 0 ? dealsPerPlayer : "—"}
+            </span>
           </div>
           {players.length > 0 && (
             <button

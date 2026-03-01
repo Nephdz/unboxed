@@ -2,12 +2,10 @@ import { useState, useEffect } from "react";
 import { Player } from "./types";
 import { deals } from "./data/deals";
 
-type DeckConfig = Record<string, number>;
-
-const defaultDeckConfig: DeckConfig = deals.reduce((acc, deal) => {
+const defaultDeckConfig: Record<string, number> = deals.reduce((acc, deal) => {
   acc[deal.id] = deal.defaultCount;
   return acc;
-}, {} as DeckConfig);
+}, {} as Record<string, number>);
 
 import Header from "./components/Header";
 import Nav from "./components/Nav";
@@ -26,35 +24,13 @@ function App() {
     return saved ? JSON.parse(saved) : [];
   });
 
-  const [deckConfig, setDeckConfig] = useState<DeckConfig>(() => {
-    const saved = localStorage.getItem("unboxed-deck-config");
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      // Merge with defaults to include any new deals
-      return { ...defaultDeckConfig, ...parsed };
-    }
-    return defaultDeckConfig;
-  });
-
-  const [dealsPerPlayer, setDealsPerPlayer] = useState<number>(() => {
-    const saved = localStorage.getItem("unboxed-deals-per-player");
-    return saved ? JSON.parse(saved) : 2;
-  });
+  const totalCards = deals.reduce((sum, deal) => sum + deal.defaultCount, 0);
+  const dealsPerPlayer =
+    players.length > 0 ? Math.floor(totalCards / players.length) : 0;
 
   useEffect(() => {
     localStorage.setItem("unboxed-players", JSON.stringify(players));
   }, [players]);
-
-  useEffect(() => {
-    localStorage.setItem("unboxed-deck-config", JSON.stringify(deckConfig));
-  }, [deckConfig]);
-
-  useEffect(() => {
-    localStorage.setItem(
-      "unboxed-deals-per-player",
-      JSON.stringify(dealsPerPlayer),
-    );
-  }, [dealsPerPlayer]);
 
   const addPlayer = (name: string) => {
     const newPlayer: Player = {
@@ -91,20 +67,12 @@ function App() {
     setPlayers([]);
   };
 
-  const updateDeckConfig = (dealId: string, count: number) => {
-    setDeckConfig({ ...deckConfig, [dealId]: Math.max(0, count) });
-  };
-
-  const updateDealsPerPlayer = (count: number) => {
-    setDealsPerPlayer(Math.max(0, count));
-  };
-
   const randomlyAssignDeals = () => {
     if (players.length === 0) return;
 
     // Build the deck based on config
     const deck: string[] = [];
-    for (const [dealId, count] of Object.entries(deckConfig)) {
+    for (const [dealId, count] of Object.entries(defaultDeckConfig)) {
       for (let i = 0; i < count; i++) {
         deck.push(dealId);
       }
@@ -148,15 +116,12 @@ function App() {
         <Players
           players={players}
           deals={deals}
-          deckConfig={deckConfig}
           dealsPerPlayer={dealsPerPlayer}
           onAddPlayer={addPlayer}
           onRemovePlayer={removePlayer}
           onAssignDeal={assignDeal}
           onRemoveDeal={removeDeal}
           onClearAll={clearAllPlayers}
-          onUpdateDeckConfig={updateDeckConfig}
-          onUpdateDealsPerPlayer={updateDealsPerPlayer}
           onRandomAssign={randomlyAssignDeals}
         />
         <Conversions />

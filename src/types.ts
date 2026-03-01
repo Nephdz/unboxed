@@ -1,6 +1,7 @@
 export interface Deal {
   id: string;
   name: string;
+  playType?: string;
   description: string;
   abbreviation: string;
   image: string;

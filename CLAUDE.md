@@ -30,8 +30,6 @@ This is a React + TypeScript single-page application for a drinking card game ca
 - App.tsx is the main component that manages state and passes props down
 - localStorage keys:
   - `'unboxed-players'` - Player data
-  - `'unboxed-deck-config'` - Number of each deal card in the deck (default 2 each)
-  - `'unboxed-deals-per-player'` - How many deals each player receives (default 2)
 
 ### Core Data Types
 
@@ -45,9 +43,11 @@ interface Player {
 interface Deal {
   id: string;
   name: string;
+  playType?: string;  // When/how the deal can be played
   description: string;
   abbreviation: string;
   image: string;  // Path to image in public/images/deals/
+  defaultCount: number;  // How many copies go in the deck
 }
 ```
 

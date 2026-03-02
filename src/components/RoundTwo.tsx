@@ -31,9 +31,8 @@ function RoundTwo() {
             their choosing.
           </p>
           <p className="rule-text special">
-            Foursome: If a fourth matching card appears, the player who placed
-            it drinks their stack and everyone else drinks the remaining three
-            stacks.
+            Foursome: If a fourth matching card appears, everybody drinks a
+            shot.
           </p>
           <p className="rule-text special">
             If the matches are royalty, everybody must drink the total stack

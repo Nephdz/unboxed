@@ -10,7 +10,7 @@ function Deals({ deals }: DealsProps) {
     <section id="deals" className="section">
       <h2>Deals</h2>
       <p className="section-intro">
-        Special abilities available after missing a guess. Use them wisely.
+        Special abilities available after a condition is met. Use them wisely.
       </p>
 
       <div className="deals-grid">

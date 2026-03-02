@@ -20,10 +20,7 @@ function RoundThree() {
           <p className="rule-text">
             In this final round, players are able to use Deals.
           </p>
-          <p className="note">
-            Deals are only available after missing a guess. Only one deal may be
-            activated per turn.
-          </p>
+          <p className="note">Only one deal may be activated per turn.</p>
         </div>
       </div>
     </section>

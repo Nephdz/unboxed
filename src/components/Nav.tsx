@@ -15,6 +15,7 @@ function Nav() {
     { id: 'deals', label: 'Deals' },
     { id: 'players', label: 'Players' },
     { id: 'conversions', label: 'Conversions' },
+    { id: 'clicker', label: 'Clicker' },
   ];
 
   return (

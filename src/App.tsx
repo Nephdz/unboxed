@@ -16,6 +16,7 @@ import RoundThree from "./components/RoundThree";
 import Deals from "./components/Deals";
 import Players from "./components/Players";
 import Conversions from "./components/Conversions";
+import Clicker from "./components/Clicker";
 import Footer from "./components/Footer";
 
 function App() {
@@ -125,6 +126,7 @@ function App() {
           onRandomAssign={randomlyAssignDeals}
         />
         <Conversions />
+        <Clicker />
       </main>
       <Footer />
     </>

@@ -320,6 +320,73 @@ main {
     border-width: 3px;
 }
 
+/* Clicker */
+.clicker-controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.clicker-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 240px;
+    margin: 32px auto;
+}
+
+.clicker-grid.small {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 160px;
+}
+
+.clicker-grid.single {
+    grid-template-columns: 1fr;
+    max-width: 90px;
+}
+
+.clicker-stack {
+    aspect-ratio: 2.5/3.5;
+    border: 2px solid var(--white);
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease;
+    padding: 0;
+}
+
+.clicker-stack.large {
+    border-width: 3px;
+}
+
+.clicker-stack:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.clicker-stack:active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.clicker-count {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--white);
+    user-select: none;
+}
+
+.clicker-grid.single .clicker-count {
+    font-size: 2rem;
+}
+
+.clicker-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
 /* Deals Grid */
 .deals-grid {
     display: grid;
